@@ -380,13 +380,13 @@
       <h2 data-en="Skills" data-vi="Kỹ năng">Skills</h2>
       <div class="skills-table">
         <div class="skill-cat" data-en="Data Engineering" data-vi="Kỹ thuật Dữ liệu">Data Engineering</div>
-        <div class="skill-val">Python, SQL, PySpark, Spark, Airflow, Kafka, ETL/ELT, Data Lake, Data Warehouse, Data Modeling</div>
+        <div class="skill-val">Python, SQL, PySpark, Spark MLlib, Airflow (TaskFlow), Kafka, ETL/ELT, Data Lakehouse, Data Warehouse, Data Modeling (Star Schema)</div>
 
         <div class="skill-cat" data-en="Platforms & DBs" data-vi="Nền tảng & CSDL">Platforms & DBs</div>
-        <div class="skill-val">GCP (BigQuery, GCS), AWS (S3, Glue, Lambda, Athena, QuickSight), PostgreSQL, Oracle, Databricks</div>
+        <div class="skill-val">AWS (S3, Glue, Athena, QuickSight, IAM), GCP (BigQuery, GCS), PostgreSQL, Oracle, Databricks, Redis</div>
 
-        <div class="skill-cat" data-en="Analytics & Tools" data-vi="Phân tích & Công cụ">Analytics & Tools</div>
-        <div class="skill-val">Tableau, Power BI, Git, Docker, Pandas, NumPy</div>
+        <div class="skill-cat" data-en="Tools & DevOps" data-vi="Công cụ & DevOps">Tools & DevOps</div>
+        <div class="skill-val">Terraform (IaC), Docker & Compose, CI/CD (GitHub Actions), Git, Tableau, Power BI, Pandas, Pytest</div>
 
         <div class="skill-cat" data-en="Languages" data-vi="Ngoại ngữ">Languages</div>
         <div class="skill-val">English (TOEIC 725)</div>
@@ -480,63 +480,80 @@
       <!-- Project 1: Football AWS -->
       <div class="item">
         <div class="item-header">
-          <span class="item-title">Football Analytics Data Platform</span>
-          <span class="item-meta">AWS Cloud Pipeline</span>
+          <span class="item-title">Serverless Football Analytics Data Lakehouse</span>
+          <span class="item-meta">AWS Cloud & ML Pipeline</span>
         </div>
         <div class="item-subtitle">
-          <span class="tech-stack">Python · Spark · AWS S3 · Glue · Lambda · Athena · QuickSight</span>
+          <span class="tech-stack">AWS S3 · Glue (PySpark) · Athena · QuickSight · Terraform · Spark MLlib · GitHub Actions</span>
         </div>
         <ul class="bullets">
-          <li data-en="Designed an end-to-end cloud data pipeline covering ingestion, S3-based Data Lake storage, Spark transformations with AWS Glue, querying through Athena, and visualization in QuickSight."
-              data-vi="Thiết kế pipeline dữ liệu đám mây hoàn chỉnh từ khâu thu thập (ingestion), lưu trữ Data Lake trên S3, xử lý biến đổi bằng Spark với AWS Glue, truy vấn qua Athena và trực quan hóa trên QuickSight.">
-            Designed an end-to-end cloud data pipeline covering ingestion, S3-based Data Lake storage, Spark transformations with AWS Glue, querying through Athena, and visualization in QuickSight.
+          <li data-en="Architected an end-to-end Medallion Data Lakehouse on AWS provisioned via Terraform (IaC), covering raw JSON ingestion, Glue 4.0 PySpark distributed transformations into Snappy-compressed Parquet, and ad-hoc SQL via Amazon Athena."
+              data-vi="Thiết kế kiến trúc Medallion Data Lakehouse hoàn chỉnh trên AWS khởi tạo qua Terraform (IaC), bao gồm thu thập JSON thô, xử lý phân tán bằng AWS Glue 4.0 PySpark ra định dạng Parquet nén Snappy và truy vấn SQL tối ưu trên Athena.">
+            Architected an end-to-end Medallion Data Lakehouse on AWS provisioned via Terraform (IaC), covering raw JSON ingestion, Glue 4.0 PySpark distributed transformations into Snappy-compressed Parquet, and ad-hoc SQL via Amazon Athena.
           </li>
-          <li data-en="Implemented automated data processing and analytical layers to transform raw football data into query-ready datasets for analysis."
-              data-vi="Triển khai các tầng xử lý và phân tích tự động nhằm chuyển đổi dữ liệu bóng đá thô thành tập dữ liệu sẵn sàng cho truy vấn phân tích chuyên sâu.">
-            Implemented automated data processing and analytical layers to transform raw football data into query-ready datasets for analysis.
+          <li data-en="Engineered automated data quality gates and built a machine learning pipeline using Spark MLlib (Random Forest) to forecast match outcomes and compute team tactical ratings."
+              data-vi="Triển khai cổng kiểm soát chất lượng dữ liệu (Data Quality Gate) và xây dựng pipeline học máy phân tán bằng Spark MLlib (Random Forest) để dự đoán kết quả trận đấu và tính toán xếp hạng chiến thuật các đội bóng.">
+            Engineered automated data quality gates and built a machine learning pipeline using Spark MLlib (Random Forest) to forecast match outcomes and compute team tactical ratings.
           </li>
         </ul>
         <div class="project-actions">
-          <a href="https://canva.link/6pz4tgpmeqcc508" target="_blank" rel="noopener">↗ Presentation Slide (Canva)</a>
+          <a href="https://github.com/hqvz28/football-analytics-aws" target="_blank" rel="noopener">↗ github.com/hqvz28/football-analytics-aws</a>
+          <a href="https://canva.link/6pz4tgpmeqcc508" target="_blank" rel="noopener">↗ Presentation Deck (Canva)</a>
           <button class="toggle-arch" aria-controls="arch-aws" aria-expanded="false" onclick="toggleArch('arch-aws', this)">[ + architecture ]</button>
         </div>
-        <div id="arch-aws" class="arch-box">[Football Data Sources / API]
+        <div id="arch-aws" class="arch-box">[Terraform IaC] ──► Provisions S3 Buckets, IAM Policies, Glue Job & Athena Workgroup
       │
-      ▼ (Python / AWS Lambda)
-[AWS S3: Raw Zone] ──► [AWS Glue (PySpark ETL)] ──► [AWS S3: Processed Zone (Parquet)]
-                                                            │
-                                                            ▼ (Glue Data Catalog)
-                                                      [AWS Athena] ──► [Amazon QuickSight]</div>
+[Football REST API] ──► [Python Ingestion (Boto3)] ──► [S3 Raw Zone (Glacier Lifecycle)]
+                                                              │
+                                                              ▼
+                                                   [AWS Glue 4.0 (PySpark ETL)]
+                                                              │
+                                      +-----------------------+-----------------------+
+                                      │                                               │
+                                      ▼                                               ▼
+               [S3 Processed Zone: Parquet (Snappy)]                     [Spark MLlib Match Predictor]
+                                      │                                               │
+                                      ▼ (Glue Data Catalog)                           ▼
+                        [Amazon Athena (Presto SQL)] ──► [QuickSight]    [Predictions & Power Rankings]</div>
       </div>
 
       <!-- Project 2: Forex Airflow -->
       <div class="item">
         <div class="item-header">
-          <span class="item-title">Automated Forex ETL Pipeline</span>
+          <span class="item-title">Enterprise Automated Forex ETL & Warehouse Pipeline</span>
           <span class="item-meta">Open Source / GitHub</span>
         </div>
         <div class="item-subtitle">
-          <span class="tech-stack">Apache Airflow · Python · Docker · SQL · ETL Orchestration</span>
+          <span class="tech-stack">Apache Airflow (TaskFlow API) · Python · Docker · PostgreSQL · Star Schema · CI/CD</span>
         </div>
         <ul class="bullets">
-          <li data-en="Built an automated workflow orchestrated by Apache Airflow to extract, validate, transform, and load foreign exchange (Forex) market rates on a scheduled basis."
-              data-vi="Xây dựng luồng dữ liệu tự động điều phối bằng Apache Airflow để thu thập, kiểm tra, biến đổi và nạp dữ liệu tỷ giá ngoại hối (Forex) theo lịch trình định kỳ.">
-            Built an automated workflow orchestrated by Apache Airflow to extract, validate, transform, and load foreign exchange (Forex) market rates on a scheduled basis.
+          <li data-en="Orchestrated a resilient Forex ETL pipeline in Airflow 2.x with automated failover from APILayer to European Central Bank (Frankfurter API), ensuring 100% data availability during API rate limits."
+              data-vi="Điều phối luồng dữ liệu Forex tự động trên Airflow 2.x với cơ chế tự động chuyển đổi nguồn (Failover) từ APILayer sang Ngân hàng Trung ương Châu Âu (Frankfurter API), đảm bảo không gián đoạn khi bị giới hạn lượt gọi API.">
+            Orchestrated a resilient Forex ETL pipeline in Airflow 2.x with automated failover from APILayer to European Central Bank (Frankfurter API), ensuring 100% data availability during API rate limits.
           </li>
-          <li data-en="Containerized the Airflow environment and dependencies with Docker for reproducible deployment, task retry handling, and historical rate tracking."
-              data-vi="Đóng gói môi trường Airflow và các thư viện phụ thuộc bằng Docker giúp triển khai đồng nhất, tự động xử lý lỗi (retry) và theo dõi lịch sử biến động tỷ giá.">
-            Containerized the Airflow environment and dependencies with Docker for reproducible deployment, task retry handling, and historical rate tracking.
+          <li data-en="Designed a Kimball Star Schema data warehouse (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), built pre-flight quality validation gates, and automated Telegram bot alerting."
+              data-vi="Thiết kế kho dữ liệu chuẩn chiều Kimball Star Schema (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), thiết lập chốt kiểm tra chất lượng dữ liệu và tự động phát cảnh báo qua Telegram Bot.">
+            Designed a Kimball Star Schema data warehouse (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), built pre-flight quality validation gates, and automated Telegram bot alerting.
           </li>
         </ul>
         <div class="project-actions">
-          <a href="https://github.com/hqvz28/forex_etl_airflow" target="_blank" rel="noopener">↗ github.com/hqvz28/forex_etl_airflow</a>
+          <a href="https://github.com/hqvz28/forex-etl-airflow" target="_blank" rel="noopener">↗ github.com/hqvz28/forex-etl-airflow</a>
           <button class="toggle-arch" aria-controls="arch-forex" aria-expanded="false" onclick="toggleArch('arch-forex', this)">[ + architecture ]</button>
         </div>
-        <div id="arch-forex" class="arch-box">[Forex Rates API] ──► [Airflow Sensor / HttpOperator]
-                             │
-                             ▼
-                  [PythonOperator: Parse & Clean] ──► [Analytical DB / Storage]
-                  (Dockerized Airflow Scheduler + Worker + Postgres Metadata)</div>
+        <div id="arch-forex" class="arch-box">[Primary: APILayer] ──(Auto Failover)──► [Fallback: ECB Frankfurter API]
+                                     │
+                                     ▼
+                      [Airflow TaskFlow: Ingest & Parse]
+                                     │
+                                     ▼ (Pre-flight Quality Gate)
+                    [PostgreSQL Staging: Idempotent Upsert]
+                                     │
+                                     ▼
+                  [Kimball Star Schema Warehouse (Postgres)]
+                  (dim_date, dim_currency, fact_exchange_rates, fact_volatility)
+                                     │
+                                     ▼
+                     [Telegram Bot Volatility Alerts]</div>
       </div>
 
       <!-- Project 3: eFAST VietinBank -->
