@@ -497,16 +497,27 @@
           </li>
         </ul>
         <div class="project-actions">
-          <a href="https://canva.link/6pz4tgpmeqcc508" target="_blank" rel="noopener">↗ Presentation Slide (Canva)</a>
+          <a href="projects/aws-football-analytics/" target="_blank" rel="noopener" data-en="↗ Project Presentation (HTML)" data-vi="↗ Slide dự án (HTML)">↗ Project Presentation (HTML)</a>
           <button class="toggle-arch" aria-controls="arch-aws" aria-expanded="false" onclick="toggleArch('arch-aws', this)">[ + architecture ]</button>
         </div>
-        <div id="arch-aws" class="arch-box">[Football Data Sources / API]
+        <div id="arch-aws" class="arch-box">[Football CSV Data: players / clubs / transfers / appearances]
       │
-      ▼ (Python / AWS Lambda)
-[AWS S3: Raw Zone] ──► [AWS Glue (PySpark ETL)] ──► [AWS S3: Processed Zone (Parquet)]
-                                                            │
-                                                            ▼ (Glue Data Catalog)
-                                                      [AWS Athena] ──► [Amazon QuickSight]</div>
+      ▼
+[S3: Raw Zone] ──► [Lambda: Scan &amp; Direct Flow]
+                            ├──► [Lambda: Short Execution] ──┐
+                            └──► [Glue: Spark Execution] ────┤
+                                                            ▼
+                                                 [S3: Clean Zone (CSV)]
+                                                   │                │
+                                                   ▼                │
+                                            [Glue Crawler]         │
+                                                   ▼                │
+                                          [Glue Data Catalog]      │
+                                                   └───────┬────────┘
+                                                           ▼
+                                                    [Amazon Athena]
+                                                           ▼
+                                                  [Amazon QuickSight]</div>
       </div>
 
       <!-- Project 2: Forex Airflow -->
