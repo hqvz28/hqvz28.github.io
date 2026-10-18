@@ -384,6 +384,12 @@ GROUP BY
   <script>
     (() => {
       'use strict';
+      // Keep visitors from the Upwork edition on that portfolio when returning.
+      if (new URLSearchParams(window.location.search).get('from') === 'upwork') {
+        document.querySelectorAll('a[href="../../index.html"]').forEach(link => {
+          link.setAttribute('href', '../../upwork/');
+        });
+      }
       const root = document.documentElement;
       const themeButton = document.getElementById('themeButton');
       function applyTheme(theme) {
