@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hoang Quoc Viet — Data Engineer specializing in ETL/ELT, Spark, SQL, cloud data platforms, and analytics." />
+  <title>Hoang Quoc Viet — Data Engineer | Upwork Portfolio</title>
+  
+  <!-- Open Graph & LinkedIn Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hqvz28.github.io/upwork/" />
+  <meta property="og:title" content="Hoang Quoc Viet — Data Engineer Portfolio" />
+  <meta property="og:description" content="End-to-End Data Engineering Portfolio: AWS Serverless Lakehouse, Apache Airflow ETL, PySpark, and Kimball Star Schema data warehouses." />
+  <meta property="og:image" content="https://hqvz28.github.io/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hoang Quoc Viet — Data Engineer Portfolio" />
+  <meta name="twitter:description" content="End-to-End Data Engineering Portfolio: AWS Serverless Lakehouse, Apache Airflow ETL, PySpark, and Kimball Star Schema data warehouses." />
+  <meta name="twitter:image" content="https://hqvz28.github.io/preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF9F6;
+      --surface: #F3F2EE;
+      --text: #18181B;
+      --muted: #52525B;
+      --subtle: #71717A;
+      --border: #E4E4E7;
+      --accent: #18181B;
+      --link-hover: #000000;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111113;
+      --surface: #18181B;
+      --text: #F4F4F5;
+      --muted: #A1A1AA;
+      --subtle: #71717A;
+      --border: #27272A;
+      --accent: #F4F4F5;
+      --link-hover: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* Top utility bar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    .controls {
+      flex-wrap: wrap;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn-text {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .btn-text:hover {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 44px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .summary {
+      color: var(--text);
+      margin-bottom: 20px;
+      max-width: 660px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+    }
+
+    .contact-links a, .contact-links span {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .upwork-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 12px;
+      border-radius: 9999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .compliance-notice {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid #10b981;
+      border-radius: 6px;
+      font-size: 12.5px;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--subtle);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Experience & Project Items */
+    .item {
+      margin-bottom: 28px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .item-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    .item-subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 14.5px;
+    }
+
+    ul.bullets li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--subtle);
+    }
+
+    /* Project Links & Toggle */
+    .project-actions {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .project-actions a, .toggle-arch {
+      color: var(--muted);
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .project-actions a:hover, .toggle-arch:hover {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    .arch-box {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre;
+      color: var(--text);
+    }
+
+    .arch-box.open {
+      display: block;
+    }
+
+    /* Skills Grid */
+    .skills-table {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      row-gap: 10px;
+      column-gap: 16px;
+      font-size: 14.5px;
+    }
+
+    .skill-cat {
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      footer {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .container {
+        padding: 36px 18px 64px;
+      }
+      .skills-table {
+        grid-template-columns: 1fr;
+        row-gap: 4px;
+      }
+      .skill-val {
+        margin-bottom: 10px;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 4px;
+    }
+
+    @media print {
+      :root, [data-theme="dark"] {
+        --bg: #fff;
+        --surface: #f3f3f3;
+        --text: #000;
+        --muted: #333;
+        --subtle: #555;
+        --border: #ddd;
+      }
+      .item {
+        break-inside: avoid;
+      }
+      .arch-box {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+        color: #000;
+        font-size: 12px;
+      }
+      .container {
+        padding: 0;
+        max-width: 100%;
+      }
+      .topbar, .project-actions, footer {
+        display: none;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      .item {
+        margin-bottom: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Utility Bar -->
+    <div class="topbar">
+      <span>hqvz28 / portfolio · upwork edition</span>
+      <div class="controls">
+        <button class="btn-text" id="langBtn" onclick="toggleLang()">[ vi ]</button>
+        <button class="btn-text" id="themeBtn" onclick="toggleTheme()">[ dark ]</button>
+        <button class="btn-text" onclick="window.print()">[ print pdf ]</button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <h1>Hoang Quoc Viet</h1>
+      <div class="role" data-en="Data Engineer — Hanoi, Vietnam" data-vi="Kỹ sư Dữ liệu (Data Engineer) — Hà Nội, Việt Nam">
+        Data Engineer — Hanoi, Vietnam
+      </div>
+      <p class="summary" 
+         data-en="Data Engineer with 2 years of experience in enterprise and banking data systems, specializing in ETL/ELT pipelines, large-scale data processing, Spark, SQL, data modeling, streaming data, and analytical data products. Interested in advancing toward Data Science, Machine Learning, statistics, and large-scale data analytics."
+         data-vi="Kỹ sư Dữ liệu với 2 năm kinh nghiệm trong các hệ thống dữ liệu doanh nghiệp và ngân hàng, chuyên sâu về xây dựng luồng ETL/ELT, xử lý dữ liệu lớn, Spark, SQL, mô hình hóa dữ liệu (data modeling), streaming và các sản phẩm dữ liệu phân tích. Định hướng phát triển chuyên sâu về Khoa học Dữ liệu, Học máy, thống kê và phân tích dữ liệu quy mô lớn.">
+        Data Engineer with 2 years of experience in enterprise and banking data systems, specializing in ETL/ELT pipelines, large-scale data processing, Spark, SQL, data modeling, streaming data, and analytical data products. Interested in advancing toward Data Science, Machine Learning, statistics, and large-scale data analytics.
+      </p>
+      <div class="contact-links">
+        <span class="upwork-badge">● Available for Hire on Upwork</span>
+        <a href="https://github.com/hqvz28" target="_blank" rel="noopener">github.com/hqvz28</a>
+      </div>
+      <div class="compliance-notice">
+        <span style="font-size: 16px;">🛡️</span>
+        <span data-en="To comply with Upwork Terms of Service, all initial client inquiries and project communications must be conducted directly through Upwork Messages."
+              data-vi="Để tuân thủ Điều khoản Dịch vụ của Upwork, mọi trao đổi về dự án và liên hệ ban đầu được thực hiện trực tiếp qua tin nhắn Upwork.">
+          To comply with Upwork Terms of Service, all initial client inquiries and project communications must be conducted directly through Upwork Messages.
+        </span>
+      </div>
+    </header>
+
+    <!-- Skills -->
+    <section>
+      <h2 data-en="Skills" data-vi="Kỹ năng">Skills</h2>
+      <div class="skills-table">
+        <div class="skill-cat" data-en="Data Engineering" data-vi="Kỹ thuật Dữ liệu">Data Engineering</div>
+        <div class="skill-val">Python, SQL, PySpark, Spark MLlib, Airflow (TaskFlow), Kafka, ETL/ELT, Data Lakehouse, Data Warehouse, Data Modeling (Star Schema)</div>
+
+        <div class="skill-cat" data-en="Platforms & DBs" data-vi="Nền tảng & CSDL">Platforms & DBs</div>
+        <div class="skill-val">AWS (S3, Glue, Athena, QuickSight, IAM), GCP (BigQuery, GCS), PostgreSQL, Oracle, Databricks, Redis</div>
+
+        <div class="skill-cat" data-en="Tools & DevOps" data-vi="Công cụ & DevOps">Tools & DevOps</div>
+        <div class="skill-val">Terraform (IaC), Docker & Compose, CI/CD (GitHub Actions), Git, Tableau, Power BI, Pandas, Pytest</div>
+
+        <div class="skill-cat" data-en="Languages" data-vi="Ngoại ngữ">Languages</div>
+        <div class="skill-val">English (TOEIC 725)</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 data-en="Experience" data-vi="Kinh nghiệm làm việc">Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Data Engineer — VietinBank</span>
+          <span class="item-meta">Jul 2025 – Present</span>
+        </div>
+        <div class="item-subtitle">
+          <span>Vietnam Joint Stock Commercial Bank for Industry and Trade</span>
+          <span>Ha Noi, Viet Nam</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Design and maintain ETL data pipelines and analytical data layers for banking systems, transforming operational data into reusable datasets for business analytics, BI, and downstream applications."
+              data-vi="Thiết kế và vận hành các luồng dữ liệu ETL cùng các tầng dữ liệu phân tích cho hệ thống ngân hàng, chuyển đổi dữ liệu vận hành thành các tập dữ liệu tái sử dụng cho phân tích kinh doanh, BI và các ứng dụng hạ nguồn.">
+            Design and maintain ETL data pipelines and analytical data layers for banking systems, transforming operational data into reusable datasets for business analytics, BI, and downstream applications.
+          </li>
+          <li data-en="Developed Spark-based aggregation tables to pre-compute large-volume business metrics, replacing expensive on-demand calculations and reducing analytical query latency to the order of seconds."
+              data-vi="Phát triển các bảng tổng hợp bằng Spark để tính toán trước các chỉ số nghiệp vụ khối lượng lớn, thay thế các phép tính truy vấn trực tiếp tốn kém và giảm độ trễ truy vấn phân tích xuống chỉ còn vài giây.">
+            Developed Spark-based aggregation tables to pre-compute large-volume business metrics, replacing expensive on-demand calculations and reducing analytical query latency to the order of seconds.
+          </li>
+          <li data-en="Built reusable SQL views on top of processed datasets, enabling business users to independently query data and create operational and management dashboards with significantly faster response times."
+              data-vi="Xây dựng hệ thống SQL views tái sử dụng trên dữ liệu đã xử lý, giúp người dùng nghiệp vụ chủ động truy vấn và xây dựng dashboard điều hành với tốc độ phản hồi nhanh hơn đáng kể.">
+            Built reusable SQL views on top of processed datasets, enabling business users to independently query data and create operational and management dashboards with significantly faster response times.
+          </li>
+          <li data-en="Collaborate with business users, BI specialists, data scientists, machine learning engineers, and solution architects to translate analytical requirements into scalable data models and data products."
+              data-vi="Phối hợp cùng các đơn vị nghiệp vụ, chuyên gia BI, Data Scientist, ML Engineer và Solution Architect để chuyển hóa yêu cầu phân tích thành các mô hình và sản phẩm dữ liệu có khả năng mở rộng cao.">
+            Collaborate with business users, BI specialists, data scientists, machine learning engineers, and solution architects to translate analytical requirements into scalable data models and data products.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Data Engineer — FPT Software</span>
+          <span class="item-meta">Jul 2024 – Jun 2025</span>
+        </div>
+        <div class="item-subtitle">
+          <span>Enterprise Data & Cloud Division</span>
+          <span>Ha Noi, Viet Nam</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Developed data pipelines and analytical datasets on GCP using GCS, BigQuery, SQL, and PL/SQL for a large Japanese enterprise, supporting approximately 20 business dashboards."
+              data-vi="Phát triển các luồng dữ liệu và tập dữ liệu phân tích trên GCP (GCS, BigQuery, SQL, PL/SQL) cho một tập đoàn lớn của Nhật Bản, phục vụ khoảng 20 dashboard kinh doanh.">
+            Developed data pipelines and analytical datasets on GCP using GCS, BigQuery, SQL, and PL/SQL for a large Japanese enterprise, supporting approximately <strong>20 business dashboards</strong>.
+          </li>
+          <li data-en="Implemented data transformation and aggregation logic for MTD, YTD, growth, historical, and near-real-time KPIs from batch and frequently updated data sources."
+              data-vi="Triển khai logic biến đổi và tổng hợp dữ liệu cho các chỉ số KPI về MTD, YTD, tăng trưởng, dữ liệu lịch sử và near-real-time từ nguồn dữ liệu batch và cập nhật liên tục.">
+            Implemented data transformation and aggregation logic for <strong>MTD, YTD, growth, historical, and near-real-time KPIs</strong> from batch and frequently updated data sources.
+          </li>
+          <li data-en="Optimized SQL queries and analytical data models for several high-volume tables, reducing dashboard loading time from approximately 5 minutes to under 1 minute."
+              data-vi="Tối ưu hóa truy vấn SQL và mô hình dữ liệu phân tích cho các bảng dung lượng lớn, giảm thời gian tải dashboard từ khoảng 5 phút xuống dưới 1 phút.">
+            Optimized SQL queries and analytical data models for several high-volume tables, reducing dashboard loading time from approximately <strong>5 minutes to under 1 minute</strong>.
+          </li>
+          <li data-en="Performed data reconciliation across source systems, Data Lake, Data Warehouse, and Tableau layers to identify data quality and mapping issues affecting business metrics."
+              data-vi="Thực hiện đối soát dữ liệu xuyên suốt từ hệ thống nguồn, Data Lake, Data Warehouse đến tầng Tableau nhằm phát hiện và xử lý các vấn đề chất lượng dữ liệu ảnh hưởng đến chỉ số kinh doanh.">
+            Performed data reconciliation across source systems, Data Lake, Data Warehouse, and Tableau layers to identify data quality and mapping issues affecting business metrics.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Radio Design Engineer — Viettel Network</span>
+          <span class="item-meta">Mar 2023 – Nov 2023</span>
+        </div>
+        <div class="item-subtitle">
+          <span>Telecommunications & 5G Network Optimization</span>
+          <span>Ha Noi, Viet Nam</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Analyzed 5G network measurements and radio performance data, including MIMO, beamforming, UL/DL throughput, and 5G NR coverage, using Atoll for network modeling and optimization."
+              data-vi="Phân tích dữ liệu đo kiểm mạng 5G và hiệu năng vô tuyến (MIMO, beamforming, lưu lượng UL/DL, vùng phủ 5G NR) sử dụng phần mềm Atoll để mô hình hóa và tối ưu mạng.">
+            Analyzed 5G network measurements and radio performance data, including MIMO, beamforming, UL/DL throughput, and 5G NR coverage, using Atoll for network modeling and optimization.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section>
+      <h2 data-en="Selected Projects" data-vi="Dự án tiêu biểu">Selected Projects</h2>
+
+      <!-- Project 1: Football AWS -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Serverless Football Analytics Data Lakehouse</span>
+          <span class="item-meta">AWS Cloud & ML Pipeline</span>
+        </div>
+        <div class="item-subtitle">
+          <span class="tech-stack">AWS S3 · Glue (PySpark) · Athena · QuickSight · Terraform · Spark MLlib · GitHub Actions</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Architected an end-to-end Medallion Data Lakehouse on AWS provisioned via Terraform (IaC), covering raw JSON ingestion, Glue 4.0 PySpark distributed transformations into Snappy-compressed Parquet, and ad-hoc SQL via Amazon Athena."
+              data-vi="Thiết kế kiến trúc Medallion Data Lakehouse hoàn chỉnh trên AWS khởi tạo qua Terraform (IaC), bao gồm thu thập JSON thô, xử lý phân tán bằng AWS Glue 4.0 PySpark ra định dạng Parquet nén Snappy và truy vấn SQL tối ưu trên Athena.">
+            Architected an end-to-end Medallion Data Lakehouse on AWS provisioned via Terraform (IaC), covering raw JSON ingestion, Glue 4.0 PySpark distributed transformations into Snappy-compressed Parquet, and ad-hoc SQL via Amazon Athena.
+          </li>
+          <li data-en="Engineered automated data quality gates and built a machine learning pipeline using Spark MLlib (Random Forest) to forecast match outcomes and compute team tactical ratings."
+              data-vi="Triển khai cổng kiểm soát chất lượng dữ liệu (Data Quality Gate) và xây dựng pipeline học máy phân tán bằng Spark MLlib (Random Forest) để dự đoán kết quả trận đấu và tính toán xếp hạng chiến thuật các đội bóng.">
+            Engineered automated data quality gates and built a machine learning pipeline using Spark MLlib (Random Forest) to forecast match outcomes and compute team tactical ratings.
+          </li>
+        </ul>
+        <div class="project-actions">
+          <a href="https://github.com/hqvz28/football-analytics-aws" target="_blank" rel="noopener">↗ github.com/hqvz28/football-analytics-aws</a>
+          <a href="../football-presentation/" target="_blank" rel="noopener">↗ Interactive Slides (Reveal.js)</a>
+          <button class="toggle-arch" aria-controls="arch-aws" aria-expanded="false" onclick="toggleArch('arch-aws', this)">[ + architecture ]</button>
+        </div>
+        <div id="arch-aws" class="arch-box">[Terraform IaC] ──► Provisions S3 Buckets, IAM Policies, Glue Job & Athena Workgroup
+      │
+[Football REST API] ──► [Python Ingestion (Boto3)] ──► [S3 Raw Zone (Glacier Lifecycle)]
+                                                              │
+                                                              ▼
+                                                   [AWS Glue 4.0 (PySpark ETL)]
+                                                              │
+                                      +-----------------------+-----------------------+
+                                      │                                               │
+                                      ▼                                               ▼
+               [S3 Processed Zone: Parquet (Snappy)]                     [Spark MLlib Match Predictor]
+                                      │                                               │
+                                      ▼ (Glue Data Catalog)                           ▼
+                        [Amazon Athena (Presto SQL)] ──► [QuickSight]    [Predictions & Power Rankings]</div>
+      </div>
+
+      <!-- Project 2: Forex Airflow -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Enterprise Automated Forex ETL & Warehouse Pipeline</span>
+          <span class="item-meta">Open Source / GitHub</span>
+        </div>
+        <div class="item-subtitle">
+          <span class="tech-stack">Apache Airflow (TaskFlow API) · Python · Docker · PostgreSQL · Star Schema · CI/CD</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Orchestrated a resilient Forex ETL pipeline in Airflow 2.x with automated failover from APILayer to European Central Bank (Frankfurter API), ensuring 100% data availability during API rate limits."
+              data-vi="Điều phối luồng dữ liệu Forex tự động trên Airflow 2.x với cơ chế tự động chuyển đổi nguồn (Failover) từ APILayer sang Ngân hàng Trung ương Châu Âu (Frankfurter API), đảm bảo không gián đoạn khi bị giới hạn lượt gọi API.">
+            Orchestrated a resilient Forex ETL pipeline in Airflow 2.x with automated failover from APILayer to European Central Bank (Frankfurter API), ensuring 100% data availability during API rate limits.
+          </li>
+          <li data-en="Designed a Kimball Star Schema data warehouse (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), built pre-flight quality validation gates, and automated Telegram bot alerting."
+              data-vi="Thiết kế kho dữ liệu chuẩn chiều Kimball Star Schema (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), thiết lập chốt kiểm tra chất lượng dữ liệu và tự động phát cảnh báo qua Telegram Bot.">
+            Designed a Kimball Star Schema data warehouse (dim_date, dim_currency, fact_exchange_rates, fact_currency_volatility), built pre-flight quality validation gates, and automated Telegram bot alerting.
+          </li>
+        </ul>
+        <div class="project-actions">
+          <a href="https://github.com/hqvz28/forex-etl-airflow" target="_blank" rel="noopener">↗ github.com/hqvz28/forex-etl-airflow</a>
+          <button class="toggle-arch" aria-controls="arch-forex" aria-expanded="false" onclick="toggleArch('arch-forex', this)">[ + architecture ]</button>
+        </div>
+        <div id="arch-forex" class="arch-box">[Primary: APILayer] ──(Auto Failover)──► [Fallback: ECB Frankfurter API]
+                                     │
+                                     ▼
+                      [Airflow TaskFlow: Ingest & Parse]
+                                     │
+                                     ▼ (Pre-flight Quality Gate)
+                    [PostgreSQL Staging: Idempotent Upsert]
+                                     │
+                                     ▼
+                  [Kimball Star Schema Warehouse (Postgres)]
+                  (dim_date, dim_currency, fact_exchange_rates, fact_volatility)
+                                     │
+                                     ▼
+                     [Telegram Bot Volatility Alerts]</div>
+      </div>
+
+      <!-- Project 3: eFAST VietinBank -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">eFAST Data & Analytics Platform</span>
+          <span class="item-meta">VietinBank</span>
+        </div>
+        <div class="item-subtitle">
+          <span class="tech-stack">Apache Spark · SQL · ETL · Data Modeling · BI Dashboard</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Developed Spark aggregation tables to pre-calculate large-scale operational and business statistics before exposing data to analytical applications."
+              data-vi="Phát triển các bảng tổng hợp trên Spark để tính toán trước các thống kê vận hành và kinh doanh quy mô lớn cho hệ thống ngân hàng số doanh nghiệp eFAST.">
+            Developed Spark aggregation tables to pre-calculate large-scale operational and business statistics before exposing data to analytical applications.
+          </li>
+          <li data-en="Built reusable SQL views for business teams to create dashboards and perform self-service analytics, reducing complex data retrieval operations to second-level query latency."
+              data-vi="Xây dựng các SQL views tái sử dụng cho các phòng ban nghiệp vụ tự phục vụ nhu cầu tạo báo cáo (self-service BI), giảm độ trễ truy vấn phức tạp xuống mức tính bằng giây.">
+            Built reusable SQL views for business teams to create dashboards and perform self-service analytics, reducing complex data retrieval operations to <strong>second-level query latency</strong>.
+          </li>
+        </ul>
+        <div class="project-actions">
+          <button class="toggle-arch" aria-controls="arch-efast" aria-expanded="false" onclick="toggleArch('arch-efast', this)">[ + architecture ]</button>
+        </div>
+        <div id="arch-efast" class="arch-box">[Core Banking & eFAST Operational Logs]
+      │
+      ▼ (Batch / Incremental ETL)
+[Data Lake / Staging] ──► [Spark Pre-Aggregation Jobs] ──► [Mart Tables & Reusable SQL Views]
+                                                                  │
+                                                                  ▼ (&lt; 2s Latency)
+                                                        [Self-Service BI & Management Dashboards]</div>
+      </div>
+
+      <!-- Project 4: Enterprise BI FPT -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Enterprise BI & Near-Real-Time Analytics Platform</span>
+          <span class="item-meta">FPT Software</span>
+        </div>
+        <div class="item-subtitle">
+          <span class="tech-stack">GCP · BigQuery · GCS · SQL · PL/SQL · Tableau · Streaming Data</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Built analytical datasets for approximately 20 dashboards tracking MTD, YTD, business growth, historical trends, and near-real-time KPIs for a large Japanese corporation."
+              data-vi="Xây dựng các tập dữ liệu phân tích phục vụ khoảng 20 dashboard theo dõi chỉ số MTD, YTD, tăng trưởng, xu hướng lịch sử và KPI thời gian thực cho tập đoàn lớn tại Nhật Bản.">
+            Built analytical datasets for approximately <strong>20 dashboards</strong> tracking MTD, YTD, business growth, historical trends, and near-real-time KPIs for a large Japanese corporation.
+          </li>
+          <li data-en="Optimized SQL and pre-processing logic for high-volume datasets, reducing loading time on selected heavy dashboards from ~5 minutes to <1 minute."
+              data-vi="Tối ưu hóa truy vấn SQL và logic tiền xử lý cho các bảng dữ liệu lớn, rút ngắn thời gian tải các dashboard nặng từ ~5 phút xuống dưới 1 phút.">
+            Optimized SQL and pre-processing logic for high-volume datasets, reducing loading time on selected heavy dashboards from <strong>~5 minutes to &lt;1 minute</strong>.
+          </li>
+        </ul>
+        <div class="project-actions">
+          <button class="toggle-arch" aria-controls="arch-gcp" aria-expanded="false" onclick="toggleArch('arch-gcp', this)">[ + architecture ]</button>
+        </div>
+        <div id="arch-gcp" class="arch-box">[Batch & Near-Real-Time Sources] ──► [Google Cloud Storage (GCS)]
+                                            │
+                                            ▼
+                               [BigQuery DWH (Partitioned / Clustered)]
+                                            │
+                                            ▼ (5m -&gt; &lt;1m Load Time)
+                               [20+ Executive Tableau Dashboards (MTD/YTD)]</div>
+      </div>
+    </section>
+
+    <!-- Education & Achievements -->
+    <section>
+      <h2 data-en="Education & Honors" data-vi="Học vấn & Thành tích">Education & Honors</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Hanoi University of Science and Technology (HUST)</span>
+          <span class="item-meta">2020 – 2024</span>
+        </div>
+        <div class="item-subtitle">
+          <span data-en="Bachelor of Engineering in Electronics and Telecommunications"
+                data-vi="Kỹ sư Điện tử - Viễn thông">Bachelor of Engineering in Electronics and Telecommunications</span>
+        </div>
+        <ul class="bullets">
+          <li data-en="Certificate of Merit from the President of HUST for outstanding academic achievement and youth activities (2020–2021, 2021–2022)."
+              data-vi="Giấy khen của Hiệu trưởng ĐH Bách khoa Hà Nội về thành tích học tập xuất sắc và công tác Đoàn - Hội (2020–2021, 2021–2022).">
+            Certificate of Merit from the President of HUST for outstanding academic achievement and youth activities (2020–2021, 2021–2022).
+          </li>
+          <li data-en="“Student of Five Good Merits” (Sinh viên 5 Tốt) at university level (2020–2021)."
+              data-vi="Danh hiệu “Sinh viên 5 Tốt” cấp Trường (2020–2021).">
+            “Student of Five Good Merits” at university level (2020–2021).
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span>Hoang Quoc Viet © 2026 · Upwork Edition</span>
+      <span>Hosted on GitHub Pages</span>
+    </footer>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+    const englishContent = new Map(
+      Array.from(document.querySelectorAll('[data-en]'), el => [el, el.innerHTML])
+    );
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.getElementById('themeBtn');
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        btn.textContent = '[ dark ]';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        btn.textContent = '[ light ]';
+      }
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'vi' : 'en';
+      document.documentElement.lang = currentLang;
+      document.getElementById('langBtn').textContent = currentLang === 'en' ? '[ vi ]' : '[ en ]';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if (currentLang === 'en') {
+          el.innerHTML = englishContent.get(el);
+        } else {
+          el.textContent = el.getAttribute('data-vi');
+        }
+      });
+    }
+
+    function toggleArch(id, btn) {
+      const box = document.getElementById(id);
+      const isOpen = box.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.textContent = isOpen ? '[ - hide architecture ]' : '[ + architecture ]';
+    }
+  </script>
+</body>
+</html>
