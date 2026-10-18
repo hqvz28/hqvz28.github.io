@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#070b14" />
+    </linearGradient>
+
+    <!-- Accent Glow -->
+    <radialGradient id="cyanGlow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="80%" cy="70%" r="40%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+    .title { font-family: 'Inter', -apple-system, sans-serif; font-weight: 800; fill: url(#textGrad); }
+    .role { font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; fill: #38bdf8; letter-spacing: 2.5px; }
+    .subtitle { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; fill: #94a3b8; }
+    .badge-text { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 14px; fill: #e2e8f0; }
+    .status-text { font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #10b981; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#cyanGlow)" />
+  <rect width="1200" height="630" fill="url(#blueGlow)" />
+
+  <!-- Subtle Grid Lines -->
+  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1100" y1="0" x2="1100" y2="630" />
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="315" x2="1200" y2="315" />
+    <line x1="0" y1="530" x2="1200" y2="530" />
+  </g>
+
+  <!-- Outer Glass Frame -->
+  <rect x="70" y="55" width="1060" height="520" rx="24" fill="url(#cardGrad)" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.5" filter="url(#shadow)" />
+
+  <!-- Status / Pill -->
+  <g transform="translate(110, 95)">
+    <rect width="210" height="34" rx="17" fill="#064e3b" fill-opacity="0.5" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+    <circle cx="18" cy="17" r="5" fill="#10b981" />
+    <text x="32" y="22" class="status-text">DATA PORTFOLIO 2026</text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="110" y="200" class="title" font-size="52" letter-spacing="-1px">HOANG QUOC VIET</text>
+  
+  <!-- Sub-headline / Specialty -->
+  <text x="110" y="246" class="role" font-size="18">DATA ENGINEER • CLOUD LAKEHOUSE &amp; DISTRIBUTED PIPELINES</text>
+
+  <!-- Description snippet -->
+  <text x="110" y="295" class="subtitle" font-size="18">Production-grade ETL pipelines, real-time analytics &amp; Lakehouse architectures</text>
+  <text x="110" y="325" class="subtitle" font-size="18">built on AWS Cloud, Apache Spark, Airflow &amp; Kimball Dimensional Modeling.</text>
+
+  <!-- Divider Line -->
+  <line x1="110" y1="365" x2="1090" y2="365" stroke="#334155" stroke-opacity="0.6" stroke-width="1.5" />
+
+  <!-- Tech Badges Container -->
+  <!-- 1. AWS -->
+  <g transform="translate(110, 400)">
+    <rect width="135" height="54" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.2" />
+    <!-- AWS Icon / text -->
+    <text x="67" y="33" text-anchor="middle" class="badge-text" fill="#fbbf24">☁️ AWS Cloud</text>
+  </g>
+
+  <!-- 2. Apache Spark -->
+  <g transform="translate(260, 400)">
+    <rect width="155" height="54" rx="12" fill="#1e293b" stroke="#ea580c" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="77" y="33" text-anchor="middle" class="badge-text" fill="#fb923c">⚡ Apache Spark</text>
+  </g>
+
+  <!-- 3. Apache Airflow -->
+  <g transform="translate(430, 400)">
+    <rect width="160" height="54" rx="12" fill="#1e293b" stroke="#0ea5e9" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="80" y="33" text-anchor="middle" class="badge-text" fill="#38bdf8">🌪️ Apache Airflow</text>
+  </g>
+
+  <!-- 4. Python -->
+  <g transform="translate(605, 400)">
+    <rect width="125" height="54" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="62" y="33" text-anchor="middle" class="badge-text" fill="#60a5fa">🐍 Python</text>
+  </g>
+
+  <!-- 5. PostgreSQL -->
+  <g transform="translate(745, 400)">
+    <rect width="150" height="54" rx="12" fill="#1e293b" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="75" y="33" text-anchor="middle" class="badge-text" fill="#38bdf8">🐘 PostgreSQL</text>
+  </g>
+
+  <!-- 6. Docker -->
+  <g transform="translate(910, 400)">
+    <rect width="125" height="54" rx="12" fill="#1e293b" stroke="#2563eb" stroke-opacity="0.4" stroke-width="1.2" />
+    <text x="62" y="33" text-anchor="middle" class="badge-text" fill="#60a5fa">🐳 Docker</text>
+  </g>
+
+  <!-- Footer Info / Link -->
+  <g transform="translate(110, 520)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="14" fill="#64748b">PORTFOLIO: https://hqvz28.github.io</text>
+    <text x="980" y="0" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="14" fill="#64748b">GITHUB: github.com/hqvz28</text>
+  </g>
+</svg>
